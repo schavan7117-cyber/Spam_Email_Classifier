@@ -1,0 +1,1208 @@
+/* ==========================================================
+   AI Spam Email Classifier
+   Professional UI
+   Part 3A-2.1
+========================================================== */
+
+/* ---------------- GOOGLE FONT ---------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------------- ROOT VARIABLES ---------------- */
+
+:root{
+
+    --primary:#4f46e5;
+    --primary-dark:#3730a3;
+
+    --secondary:#0ea5e9;
+
+    --success:#10b981;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --dark:#0f172a;
+
+    --light:#ffffff;
+
+    --gray:#64748b;
+
+    --bg:#eef2ff;
+
+    --card:#ffffff;
+
+    --border:#dbe4ff;
+
+    --shadow:0 12px 35px rgba(0,0,0,.12);
+
+    --radius:20px;
+
+    --transition:.35s ease;
+
+}
+
+/* ---------------- RESET ---------------- */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:linear-gradient(
+135deg,
+#eef2ff,
+#e0f2fe,
+#f8fafc
+);
+
+color:#111827;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#e5e7eb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary-dark);
+
+}
+
+/* ---------------- LINKS ---------------- */
+
+a{
+
+text-decoration:none;
+
+transition:var(--transition);
+
+}
+
+a:hover{
+
+opacity:.9;
+
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar{
+
+background:linear-gradient(
+90deg,
+var(--primary),
+var(--secondary)
+);
+
+padding:16px 0;
+
+backdrop-filter:blur(10px);
+
+}
+
+.navbar-brand{
+
+font-size:1.5rem;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+}
+
+.navbar-brand i{
+
+margin-right:8px;
+
+font-size:1.4rem;
+
+}
+
+#themeToggle{
+
+border-radius:12px;
+
+padding:10px 14px;
+
+transition:.3s;
+
+}
+
+#themeToggle:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ---------------- HERO SECTION ---------------- */
+
+.hero{
+
+padding:70px 0;
+
+}
+
+.hero h1{
+
+font-weight:800;
+
+line-height:1.2;
+
+}
+
+.hero p{
+
+font-size:1.05rem;
+
+color:var(--gray);
+
+}
+
+.hero-icon{
+
+font-size:220px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:floatIcon 4s ease-in-out infinite;
+
+}
+
+@keyframes floatIcon{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ---------------- BADGES ---------------- */
+
+.badge{
+
+padding:10px 16px;
+
+border-radius:30px;
+
+font-size:.85rem;
+
+font-weight:600;
+
+}
+
+/* ---------------- GLASS CARD ---------------- */
+
+.glass-card{
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.35);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.glass-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ---------------- CARD BODY ---------------- */
+
+.card-body{
+
+padding:35px;
+
+}
+
+/* ---------------- SECTION TITLE ---------------- */
+
+.card-body h3{
+
+font-weight:700;
+
+color:var(--dark);
+
+margin-bottom:25px;
+
+}
+
+/* ---------------- FORM LABEL ---------------- */
+
+.form-label{
+
+font-weight:600;
+
+margin-bottom:10px;
+
+}
+
+/* ---------------- TEXTAREA ---------------- */
+
+textarea.form-control{
+
+border-radius:18px;
+
+border:2px solid var(--border);
+
+padding:18px;
+
+font-size:16px;
+
+min-height:240px;
+
+resize:vertical;
+
+transition:.3s;
+
+background:#fff;
+
+}
+
+textarea.form-control:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 .25rem rgba(79,70,229,.15);
+
+}
+
+/* ---------------- BUTTON ---------------- */
+
+.btn-primary{
+
+background:linear-gradient(
+90deg,
+var(--primary),
+var(--secondary)
+);
+
+border:none;
+
+border-radius:16px;
+
+padding:15px;
+
+font-weight:600;
+
+letter-spacing:.4px;
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 25px rgba(79,70,229,.25);
+
+}
+
+.btn-primary:active{
+
+transform:scale(.98);
+
+}
+
+/* ---------------- DIVIDER ---------------- */
+
+hr{
+
+opacity:.15;
+
+}
+
+/* ==========================================================
+   AI Spam Email Classifier
+   Professional UI
+   Part 3A-2.2
+========================================================== */
+
+
+/* ================= RESULT SECTION ================= */
+
+.result-icon{
+
+    font-size:90px;
+
+    margin-bottom:20px;
+
+    animation:pop .6s ease;
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.4);
+
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.progress-custom{
+
+    height:32px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#e5e7eb;
+
+    margin-top:20px;
+
+}
+
+.progress-bar{
+
+    font-weight:600;
+
+    font-size:15px;
+
+    transition:width 1s ease;
+
+    background:linear-gradient(
+        90deg,
+        #10b981,
+        #22c55e
+    );
+
+}
+
+
+/* ================= FEATURE CARDS ================= */
+
+.feature-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.feature-icon{
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+}
+
+.feature-card h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:var(--gray);
+
+    margin:0;
+
+}
+
+
+/* ================= INFO BADGES ================= */
+
+.info-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 16px;
+
+    border-radius:50px;
+
+    background:#eef2ff;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin:6px;
+
+}
+
+.info-chip i{
+
+    font-size:18px;
+
+}
+
+
+/* ================= STAT CARDS ================= */
+
+.stat-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card h2{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.stat-card p{
+
+    color:var(--gray);
+
+}
+
+
+/* ================= ALERT BOX ================= */
+
+.custom-alert{
+
+    border-radius:15px;
+
+    padding:18px;
+
+    font-weight:500;
+
+}
+
+.alert-success{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+.alert-danger{
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+}
+
+.alert-warning{
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+}
+
+
+/* ================= LOADER ================= */
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:7px solid #dbeafe;
+
+    border-top-color:var(--primary);
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ================= BUTTON EFFECTS ================= */
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ================= CARD ANIMATION ================= */
+
+.fade-up{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ================= SHADOW HELPERS ================= */
+
+.shadow-soft{
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.shadow-hover:hover{
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:70px;
+
+    background:#111827;
+
+    color:#f8fafc;
+
+    padding:35px 20px;
+
+}
+
+footer p{
+
+    margin-bottom:8px;
+
+}
+
+footer .small{
+
+    color:#cbd5e1;
+
+}
+
+
+/* ================= SELECTION ================= */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   AI Spam Email Classifier
+   Professional UI
+   Part 3A-2.3
+========================================================== */
+
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+body.dark-mode{
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #1e293b
+    );
+
+    color:#f8fafc;
+
+}
+
+body.dark-mode .glass-card{
+
+    background:rgba(17,24,39,.78);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#f8fafc;
+
+}
+
+body.dark-mode textarea{
+
+    background:#1f2937;
+
+    color:#fff;
+
+    border-color:#334155;
+
+}
+
+body.dark-mode textarea::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+body.dark-mode .feature-card{
+
+    background:#1e293b;
+
+    color:#fff;
+
+    border-color:#334155;
+
+}
+
+body.dark-mode .feature-card p{
+
+    color:#cbd5e1;
+
+}
+
+body.dark-mode .stat-card{
+
+    background:#1e293b;
+
+    color:#fff;
+
+}
+
+body.dark-mode footer{
+
+    background:#020617;
+
+}
+
+body.dark-mode .navbar{
+
+    background:linear-gradient(
+        90deg,
+        #312e81,
+        #0f766e
+    );
+
+}
+
+
+/* ===========================
+   CUSTOM SCROLLBAR (DARK)
+=========================== */
+
+body.dark-mode::-webkit-scrollbar-track{
+
+    background:#1e293b;
+
+}
+
+body.dark-mode::-webkit-scrollbar-thumb{
+
+    background:#6366f1;
+
+}
+
+
+/* ===========================
+   TRANSITIONS
+=========================== */
+
+body,
+.navbar,
+.glass-card,
+.feature-card,
+textarea,
+footer{
+
+    transition:.35s ease;
+
+}
+
+
+/* ===========================
+   HOVER EFFECTS
+=========================== */
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.feature-card:hover .feature-icon{
+
+    transform:scale(1.12);
+
+    transition:.3s;
+
+}
+
+.hero-icon:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ===========================
+   INPUT ANIMATION
+=========================== */
+
+textarea{
+
+    transition:.35s;
+
+}
+
+textarea:focus{
+
+    transform:scale(1.01);
+
+}
+
+
+/* ===========================
+   BADGE EFFECT
+=========================== */
+
+.badge{
+
+    transition:.25s;
+
+}
+
+.badge:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+.hero-icon{
+
+font-size:180px;
+
+}
+
+}
+
+
+@media(max-width:992px){
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero-icon{
+
+margin-top:30px;
+
+font-size:150px;
+
+}
+
+.container{
+
+padding-left:20px;
+
+padding-right:20px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.hero{
+
+padding:45px 0;
+
+}
+
+.hero h1{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+textarea{
+
+min-height:200px;
+
+}
+
+.result-icon{
+
+font-size:70px;
+
+}
+
+.progress-custom{
+
+height:26px;
+
+}
+
+.feature-card{
+
+margin-bottom:20px;
+
+}
+
+}
+
+
+@media(max-width:576px){
+
+.navbar-brand{
+
+font-size:1.2rem;
+
+}
+
+.hero h1{
+
+font-size:1.7rem;
+
+}
+
+.hero-icon{
+
+font-size:110px;
+
+}
+
+.card-body{
+
+padding:22px;
+
+}
+
+.btn-primary{
+
+font-size:16px;
+
+padding:13px;
+
+}
+
+textarea{
+
+font-size:15px;
+
+}
+
+footer{
+
+padding:25px 15px;
+
+}
+
+}
+
+
+/* ===========================
+   UTILITIES
+=========================== */
+
+.rounded-xl{
+
+border-radius:22px;
+
+}
+
+.pointer{
+
+cursor:pointer;
+
+}
+
+.text-gradient{
+
+background:linear-gradient(
+90deg,
+#4f46e5,
+#06b6d4
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.bg-gradient{
+
+background:linear-gradient(
+90deg,
+#4f46e5,
+#06b6d4
+);
+
+}
+
+.glow{
+
+box-shadow:0 0 25px rgba(79,70,229,.35);
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+.fade-in{
+
+animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+.zoom-in{
+
+animation:zoomIn .5s ease;
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+/* ===========================
+   ACCESSIBILITY
+=========================== */
+
+button:focus,
+textarea:focus,
+input:focus{
+
+outline:none;
+
+}
+
+button:focus-visible,
+textarea:focus-visible{
+
+box-shadow:0 0 0 4px rgba(79,70,229,.25);
+
+}
+
+
+/* ===========================
+   END OF FILE
+=========================== */
